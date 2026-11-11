@@ -1,0 +1,279 @@
+{
+  "note": "Synthetic seeded corpus: measures speed/memory, NOT retrieval quality.",
+  "environment": {
+    "python": "3.12.0",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "cpu": "AMD64 Family 25 Model 68 Stepping 1, AuthenticAMD",
+    "logical_cpus": 16,
+    "torch": "2.15.0+cpu",
+    "faiss": "1.15.1",
+    "numpy": "2.5.4",
+    "torch_threads": 8,
+    "faiss_threads": 16
+  },
+  "params": {
+    "chunks": 2000,
+    "queries": 100,
+    "seed": 20260101
+  },
+  "corpus": {
+    "chunks": 2000,
+    "mean_chars": 479.0,
+    "min_chars": 302,
+    "max_chars": 665,
+    "mean_words": 67.0,
+    "distinct_texts": 2000
+  },
+  "model": {
+    "id": "sentence-transformers/all-MiniLM-L6-v2",
+    "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+    "dimension": 384,
+    "device": "cpu",
+    "load_seconds": 7.67,
+    "rss_mb_before_load": 253.6,
+    "rss_mb_after_load": 570.0,
+    "rss_mb_model_delta": 316.4
+  },
+  "embedding_throughput_by_batch_size": [
+    {
+      "batch_size": 1,
+      "texts": 500,
+      "median_seconds": 7.128,
+      "texts_per_second": 70.1,
+      "ms_per_text": 14.26,
+      "runs_seconds": [
+        7.157,
+        6.96,
+        7.128
+      ]
+    },
+    {
+      "batch_size": 8,
+      "texts": 500,
+      "median_seconds": 4.213,
+      "texts_per_second": 118.7,
+      "ms_per_text": 8.43,
+      "runs_seconds": [
+        4.213,
+        4.314,
+        4.204
+      ]
+    },
+    {
+      "batch_size": 32,
+      "texts": 500,
+      "median_seconds": 4.183,
+      "texts_per_second": 119.5,
+      "ms_per_text": 8.37,
+      "runs_seconds": [
+        4.183,
+        4.17,
+        4.55
+      ]
+    },
+    {
+      "batch_size": 64,
+      "texts": 500,
+      "median_seconds": 4.452,
+      "texts_per_second": 112.3,
+      "ms_per_text": 8.9,
+      "runs_seconds": [
+        4.623,
+        4.452,
+        4.443
+      ]
+    },
+    {
+      "batch_size": 128,
+      "texts": 500,
+      "median_seconds": 4.596,
+      "texts_per_second": 108.8,
+      "ms_per_text": 9.19,
+      "runs_seconds": [
+        4.596,
+        4.671,
+        4.532
+      ]
+    }
+  ],
+  "indexing": {
+    "chunks": 2000,
+    "total_seconds": 17.379,
+    "embedding_seconds": 17.199,
+    "embedding_texts_per_second": 116.3,
+    "non_embedding_seconds": 0.181,
+    "index_file_bytes": 3258629,
+    "raw_vector_bytes": 3072000,
+    "rss_mb_after_index": 661.4,
+    "rss_mb_index_delta": 91.4
+  },
+  "persistence": {
+    "save_median_ms": 12.13,
+    "load_median_ms": 9.48,
+    "file_bytes": 3258629,
+    "runs": 5
+  },
+  "query_embedding": {
+    "n": 100,
+    "median_ms": 9.2043,
+    "p95_ms": 9.9625,
+    "p99_ms": 10.5594,
+    "mean_ms": 9.1764
+  },
+  "faiss_search_by_top_k": [
+    {
+      "top_k": 1,
+      "n": 300,
+      "median_ms": 0.1835,
+      "p95_ms": 0.2117,
+      "p99_ms": 0.2369,
+      "mean_ms": 0.1886
+    },
+    {
+      "top_k": 5,
+      "n": 300,
+      "median_ms": 0.1908,
+      "p95_ms": 0.2161,
+      "p99_ms": 0.3022,
+      "mean_ms": 0.196
+    },
+    {
+      "top_k": 10,
+      "n": 300,
+      "median_ms": 0.1981,
+      "p95_ms": 0.2457,
+      "p99_ms": 0.3448,
+      "mean_ms": 0.1973
+    },
+    {
+      "top_k": 50,
+      "n": 300,
+      "median_ms": 0.2226,
+      "p95_ms": 0.3056,
+      "p99_ms": 0.4301,
+      "mean_ms": 0.2404
+    },
+    {
+      "top_k": 100,
+      "n": 300,
+      "median_ms": 0.2933,
+      "p95_ms": 0.3443,
+      "p99_ms": 0.555,
+      "mean_ms": 0.3023
+    }
+  ],
+  "faiss_search_with_document_filter": {
+    "top_k": 10,
+    "allowed_documents": 20,
+    "n": 300,
+    "median_ms": 0.3112,
+    "p95_ms": 0.3981,
+    "p99_ms": 0.5201,
+    "mean_ms": 0.2968
+  },
+  "end_to_end_search_by_top_k": [
+    {
+      "top_k": 1,
+      "n": 100,
+      "median_ms": 12.1397,
+      "p95_ms": 13.7233,
+      "p99_ms": 14.1982,
+      "mean_ms": 12.2502
+    },
+    {
+      "top_k": 5,
+      "n": 100,
+      "median_ms": 12.5234,
+      "p95_ms": 13.7352,
+      "p99_ms": 14.2715,
+      "mean_ms": 12.6269
+    },
+    {
+      "top_k": 10,
+      "n": 100,
+      "median_ms": 12.3541,
+      "p95_ms": 13.7733,
+      "p99_ms": 14.5237,
+      "mean_ms": 12.5146
+    },
+    {
+      "top_k": 50,
+      "n": 100,
+      "median_ms": 13.9105,
+      "p95_ms": 14.7171,
+      "p99_ms": 14.8754,
+      "mean_ms": 13.8036
+    }
+  ],
+  "scaling_random_vectors": [
+    {
+      "vectors": 10000,
+      "dimension": 384,
+      "add_seconds": 0.029,
+      "serialize_seconds": 0.009,
+      "serialized_bytes": 15360045,
+      "rss_mb_delta": 46.2,
+      "kind": "random unit vectors",
+      "search_top10": {
+        "n": 300,
+        "median_ms": 0.8189,
+        "p95_ms": 1.1085,
+        "p99_ms": 1.2693,
+        "mean_ms": 0.8671
+      },
+      "search_top50": {
+        "n": 300,
+        "median_ms": 0.9051,
+        "p95_ms": 1.2048,
+        "p99_ms": 1.323,
+        "mean_ms": 0.9539
+      }
+    },
+    {
+      "vectors": 50000,
+      "dimension": 384,
+      "add_seconds": 0.321,
+      "serialize_seconds": 0.039,
+      "serialized_bytes": 76800045,
+      "rss_mb_delta": 237.9,
+      "kind": "random unit vectors",
+      "search_top10": {
+        "n": 300,
+        "median_ms": 4.166,
+        "p95_ms": 5.0956,
+        "p99_ms": 6.0926,
+        "mean_ms": 4.2601
+      },
+      "search_top50": {
+        "n": 300,
+        "median_ms": 4.2705,
+        "p95_ms": 4.8367,
+        "p99_ms": 5.169,
+        "mean_ms": 4.3042
+      }
+    },
+    {
+      "vectors": 100000,
+      "dimension": 384,
+      "add_seconds": 0.263,
+      "serialize_seconds": 0.104,
+      "serialized_bytes": 153600045,
+      "rss_mb_delta": 481.0,
+      "kind": "random unit vectors",
+      "search_top10": {
+        "n": 300,
+        "median_ms": 8.0153,
+        "p95_ms": 9.0755,
+        "p99_ms": 10.0052,
+        "mean_ms": 8.1471
+      },
+      "search_top50": {
+        "n": 300,
+        "median_ms": 8.0586,
+        "p95_ms": 9.2601,
+        "p99_ms": 9.7301,
+        "mean_ms": 8.2045
+      }
+    }
+  ]
+}

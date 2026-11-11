@@ -1,0 +1,17 @@
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+extend-exclude = ["migrations/versions", ".venv"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+markers = ["slow: needs real models/network; excluded from default runs"]
+
+[tool.ruff.lint.per-file-ignores]
+# Long regex/data tables read better unwrapped.
+"app/services/extraction/rule_based.py" = ["E501"]
+"../scripts/*.py" = ["E501"]

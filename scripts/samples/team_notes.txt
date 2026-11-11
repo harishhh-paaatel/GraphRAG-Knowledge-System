@@ -1,0 +1,3 @@
+Bob Smith joined Acme Corp. Acme Corp is located in Berlin.
+SQLAlchemy is part of Python. Linus Torvalds wrote Linux.
+Python and FastAPI are popular, but this sentence states no relationship.

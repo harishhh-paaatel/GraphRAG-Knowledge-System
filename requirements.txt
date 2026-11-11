@@ -1,0 +1,3 @@
+# GraphRAG Knowledge System - Dependency Manifest
+# Points to the core backend dependencies
+-r backend/requirements.txt

@@ -1,0 +1,190 @@
+{
+ "provider": "hashing",
+ "note": "preliminary single run on one machine; latency and query counts only",
+ "python": "3.12.0",
+ "sizes": [
+  {
+   "documents": 50,
+   "populate_s": 0.5,
+   "first_request_ms": 59.8,
+   "vectors_indexed": 50,
+   "corpus_graph": [
+    "stats",
+    "graph",
+    "state"
+   ],
+   "vector": {
+    "n": 60,
+    "median_ms": 6.192,
+    "p95_ms": 9.276,
+    "max_ms": 37.55,
+    "sql_statements_per_request": 3.0
+   },
+   "graph": {
+    "n": 60,
+    "median_ms": 11.765,
+    "p95_ms": 13.827,
+    "max_ms": 73.046,
+    "sql_statements_per_request": 5.0
+   },
+   "hybrid": {
+    "n": 60,
+    "median_ms": 16.62,
+    "p95_ms": 17.684,
+    "max_ms": 18.681,
+    "sql_statements_per_request": 8.0
+   },
+   "hybrid_statements": [
+    "SELECT documents.id ",
+    "SELECT graph_state.id AS graph_state_id, graph_state.revision AS graph_state_revision, gra",
+    "SELECT graph_state.id AS graph_state_id, graph_state.revision AS graph_state_revision, gra",
+    "SELECT relationships.id, relationships.source_chunk_id, relationships.source_document_id ",
+    "SELECT document_chunks.id, document_chunks.document_id, document_chunks.chunk_index, docum",
+    "SELECT vector_state.id AS vector_state_id, vector_state.revision AS vector_state_revision,",
+    "SELECT document_chunks.id, document_chunks.document_id, document_chunks.chunk_index, docum",
+    "SELECT document_chunks.id, document_chunks.document_id, document_chunks.chunk_index, docum"
+   ],
+   "hybrid_breakdown_median_ms": {
+    "graph": 4.056,
+    "vector": 3.109,
+    "fusion": 0.179,
+    "verify": 1.15,
+    "total": 9.378
+   },
+   "alias_index_builds": 1,
+   "texts_embedded_total": 202,
+   "concurrent_hybrid_4_workers": {
+    "requests": 60,
+    "all_200": true,
+    "wall_s": 1.055,
+    "requests_per_s": 56.9,
+    "n": 60,
+    "median_ms": 69.999,
+    "p95_ms": 78.29,
+    "max_ms": 104.045
+   }
+  },
+  {
+   "documents": 200,
+   "populate_s": 3.61,
+   "first_request_ms": 128.7,
+   "vectors_indexed": 200,
+   "corpus_graph": [
+    "stats",
+    "graph",
+    "state"
+   ],
+   "vector": {
+    "n": 60,
+    "median_ms": 10.336,
+    "p95_ms": 11.576,
+    "max_ms": 11.805,
+    "sql_statements_per_request": 3.0
+   },
+   "graph": {
+    "n": 60,
+    "median_ms": 11.767,
+    "p95_ms": 13.502,
+    "max_ms": 13.989,
+    "sql_statements_per_request": 5.0
+   },
+   "hybrid": {
+    "n": 60,
+    "median_ms": 17.208,
+    "p95_ms": 19.178,
+    "max_ms": 82.375,
+    "sql_statements_per_request": 8.0
+   },
+   "hybrid_statements": [
+    "SELECT documents.id ",
+    "SELECT graph_state.id AS graph_state_id, graph_state.revision AS graph_state_revision, gra",
+    "SELECT graph_state.id AS graph_state_id, graph_state.revision AS graph_state_revision, gra",
+    "SELECT relationships.id, relationships.source_chunk_id, relationships.source_document_id ",
+    "SELECT document_chunks.id, document_chunks.document_id, document_chunks.chunk_index, docum",
+    "SELECT vector_state.id AS vector_state_id, vector_state.revision AS vector_state_revision,",
+    "SELECT document_chunks.id, document_chunks.document_id, document_chunks.chunk_index, docum",
+    "SELECT document_chunks.id, document_chunks.document_id, document_chunks.chunk_index, docum"
+   ],
+   "hybrid_breakdown_median_ms": {
+    "graph": 4.407,
+    "vector": 3.61,
+    "fusion": 0.174,
+    "verify": 1.153,
+    "total": 9.865
+   },
+   "alias_index_builds": 1,
+   "texts_embedded_total": 352,
+   "concurrent_hybrid_4_workers": {
+    "requests": 60,
+    "all_200": true,
+    "wall_s": 1.18,
+    "requests_per_s": 50.8,
+    "n": 60,
+    "median_ms": 76.599,
+    "p95_ms": 101.502,
+    "max_ms": 109.044
+   }
+  },
+  {
+   "documents": 800,
+   "populate_s": 29.22,
+   "first_request_ms": 312.2,
+   "vectors_indexed": 800,
+   "corpus_graph": [
+    "stats",
+    "graph",
+    "state"
+   ],
+   "vector": {
+    "n": 60,
+    "median_ms": 11.858,
+    "p95_ms": 14.01,
+    "max_ms": 14.333,
+    "sql_statements_per_request": 3.0
+   },
+   "graph": {
+    "n": 60,
+    "median_ms": 13.312,
+    "p95_ms": 15.276,
+    "max_ms": 29.205,
+    "sql_statements_per_request": 5.0
+   },
+   "hybrid": {
+    "n": 60,
+    "median_ms": 21.399,
+    "p95_ms": 44.711,
+    "max_ms": 74.419,
+    "sql_statements_per_request": 8.0
+   },
+   "hybrid_statements": [
+    "SELECT documents.id ",
+    "SELECT graph_state.id AS graph_state_id, graph_state.revision AS graph_state_revision, gra",
+    "SELECT graph_state.id AS graph_state_id, graph_state.revision AS graph_state_revision, gra",
+    "SELECT relationships.id, relationships.source_chunk_id, relationships.source_document_id ",
+    "SELECT document_chunks.id, document_chunks.document_id, document_chunks.chunk_index, docum",
+    "SELECT vector_state.id AS vector_state_id, vector_state.revision AS vector_state_revision,",
+    "SELECT document_chunks.id, document_chunks.document_id, document_chunks.chunk_index, docum",
+    "SELECT document_chunks.id, document_chunks.document_id, document_chunks.chunk_index, docum"
+   ],
+   "hybrid_breakdown_median_ms": {
+    "graph": 5.7,
+    "vector": 6.23,
+    "fusion": 0.174,
+    "verify": 1.255,
+    "total": 14.157
+   },
+   "alias_index_builds": 1,
+   "texts_embedded_total": 952,
+   "concurrent_hybrid_4_workers": {
+    "requests": 60,
+    "all_200": true,
+    "wall_s": 1.301,
+    "requests_per_s": 46.1,
+    "n": 60,
+    "median_ms": 85.386,
+    "p95_ms": 111.005,
+    "max_ms": 114.418
+   }
+  }
+ ]
+}
